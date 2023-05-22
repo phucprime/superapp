@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   ActivityIndicator,
   SafeAreaView,
@@ -8,36 +8,36 @@ import {
 } from 'react-native';
 
 import Browse from './browse';
-import { theme } from './theme';
+import {theme} from './theme';
 
-
-const App = () => {
-  const [isLoading, setLoading] = useState(true)
+function Home() {
+  const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
-      setLoading(false)
-    }, 1000)
-  }, [])
+      setLoading(false);
+    }, 500);
+  }, []);
 
   return (
     <SafeAreaView style={styles.safeAreaView}>
       <StatusBar barStyle={'light-content'} />
       {isLoading && (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-          <ActivityIndicator size={'small'} color='#fff'/>
+        // eslint-disable-next-line react-native/no-inline-styles
+        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+          <ActivityIndicator size={'small'} color="#fff" />
         </View>
       )}
       {!isLoading && <Browse />}
     </SafeAreaView>
   );
-};
+}
 
 const styles = StyleSheet.create({
   safeAreaView: {
     flex: 1,
-    backgroundColor: theme.bg
-  }
+    backgroundColor: theme.bg,
+  },
 });
 
-export default App;
+export default Home;

@@ -24,25 +24,26 @@ import LinearGradient from 'react-native-linear-gradient';
 import ScaleAnim from './ScaleAnim';
 import FadeIn from './FadeIn';
 
-import Facebook from '../../assets/fb.svg';
-import Google from '../../assets/google.svg';
-import UIUX from '../../assets/screen.svg';
-import Pen from '../../assets/pen.svg';
+import Facebook from '../../../assets/fb.svg';
+import Google from '../../../assets/google.svg';
+import UIUX from '../../../assets/screen.svg';
+import Pen from '../../../assets/pen.svg';
 
-import Computer from '../../assets/computer.svg';
-import MiniComputer from '../../assets/mini-computer.svg';
-import StarEmpty from '../../assets/star-empty.svg';
-import StarFull from '../../assets/star-full.svg';
+import Computer from '../../../assets/computer.svg';
+import MiniComputer from '../../../assets/mini-computer.svg';
+import StarEmpty from '../../../assets/star-empty.svg';
+import StarFull from '../../../assets/star-full.svg';
 
-import HomeIcon from '../../assets/home.svg';
-import MoreIcon from '../../assets/more.svg';
-import SuitcaseIcon from '../../assets/suitcase.svg';
-import PieChartIcon from '../../assets/piechart.svg';
-import UserIcon from '../../assets/user.svg';
-import SearchIcon from '../../assets/search.svg';
-import ArrowRightIcon from '../../assets/arrow-right.svg';
+import HomeIcon from '../../../assets/home.svg';
+import MoreIcon from '../../../assets/more.svg';
+import SuitcaseIcon from '../../../assets/suitcase.svg';
+import PieChartIcon from '../../../assets/piechart.svg';
+import UserIcon from '../../../assets/user.svg';
+import SearchIcon from '../../../assets/search.svg';
+import ArrowRightIcon from '../../../assets/arrow-right.svg';
 import {FOOTER_HEIGHT, HEADER_HEIGHT} from '../utils';
 import SlideUp from './SlideUp';
+import JobScreen from '../../Job';
 
 /**
  * For the sake of saving
@@ -180,7 +181,7 @@ const Header = () => {
           Hey!{'\n'}Find what you want
         </Text>
         <View style={styles.flexOne} />
-        {/* <SearchButton /> */}
+        <SearchButton />
       </View>
     </FadeIn>
   );
@@ -463,23 +464,19 @@ const BestSection = () => {
   );
 };
 
-const Footer = () => {
-  // eslint-disable-next-line no-unused-vars
-  const [selected, setSelected] = useState(2);
-
+const Footer = ({selected, setSelected}) => {
   const getTabStyle = index => {
     if (selected === index) {
       return selectedTabColors;
     }
     return ['transparent', 'transparent', 'transparent'];
   };
-
   return (
     <SlideUp>
       <View style={styles.footer}>
         {Tabs.map((tab, index) => {
           return (
-            <TouchableOpacity key={tab}>
+            <TouchableOpacity key={tab} onPress={() => setSelected(index)}>
               <LinearGradient
                 colors={getTabStyle(index)}
                 style={{
@@ -497,24 +494,22 @@ const Footer = () => {
 };
 
 const Screen = () => {
+  const [selected, setSelected] = useState(0);
   return (
     <View style={styles.flexOne}>
-      <Header />
-
-      <ScrollView contentContainerStyle={{flexGrow: 1, paddingBottom: 30}}>
-        <Spacer size={20} />
-
-        <Categories />
-
-        <Spacer size={20} />
-
-        <SectionTitle title="Best Services" />
-
-        <Spacer size={20} />
-
-        <BestSection />
-      </ScrollView>
-      <Footer />
+      {selected === 0 && <Header />}
+      {selected === 0 && (
+        <ScrollView contentContainerStyle={{flexGrow: 0, paddingBottom: 30}}>
+          <Spacer size={20} />
+          <Categories />
+          <Spacer size={20} />
+          <SectionTitle title="Best Services" />
+          <Spacer size={20} />
+          <BestSection />
+        </ScrollView>
+      )}
+      {selected === 2 && <JobScreen />}
+      <Footer selected={selected} setSelected={setSelected} />
     </View>
   );
 };

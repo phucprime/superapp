@@ -7,14 +7,14 @@ const CardTitle = ({title}) => {
   return <Text style={styles.title}>{title}</Text>;
 };
 
-const Section = ({children, title}) => {
+const Section = React.memo(({children, title}) => {
   return (
     <View style={styles.container}>
       <CardTitle title={title} />
       {children}
     </View>
   );
-};
+});
 
 const styles = StyleSheet.create({
   container: {

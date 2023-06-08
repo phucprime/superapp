@@ -17,7 +17,7 @@ const timingConfigTranslate = {
   easing: Easing.bezier(0.25, 1, 0.5, 1),
 };
 
-const FadeIn = ({children}) => {
+const FadeIn = React.memo(({children}) => {
   const opacity = useSharedValue(0);
   const animateY = useSharedValue(-30);
 
@@ -38,6 +38,6 @@ const FadeIn = ({children}) => {
   });
 
   return <Animated.View style={animationStyle}>{children}</Animated.View>;
-};
+});
 
 export default FadeIn;

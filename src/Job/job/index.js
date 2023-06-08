@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, {useEffect, useState} from 'react';
 import {
   View,
@@ -34,7 +35,7 @@ const getSectionTitle = text => {
   return '--';
 };
 
-const JobInfo = ({job}) => {
+const JobInfo = React.memo(({job}) => {
   const ApplyButton = (
     <TouchableOpacity style={styles.applyButton}>
       <View style={styles.applyButtonOverlay} />
@@ -57,18 +58,18 @@ const JobInfo = ({job}) => {
       {ApplyButton}
     </View>
   );
-};
+});
 
-const Section = ({title, description}) => {
+const Section = React.memo(({title, description}) => {
   return (
     <View>
       <Text style={styles.sectionTitle}>{title}</Text>
       <Text style={styles.sectionDescr}>{description}</Text>
     </View>
   );
-};
+});
 
-const JobDetails = ({details}) => {
+const JobDetails = React.memo(({details}) => {
   return (
     <View style={styles.jobDetailsContainer}>
       {Object.entries(details).map(([title, description], index) => {
@@ -88,9 +89,9 @@ const JobDetails = ({details}) => {
       })}
     </View>
   );
-};
+});
 
-const Job = ({route}) => {
+const Job = React.memo(({route}) => {
   const {job} = route.params;
 
   const [showAlert, setShowAlert] = useState(false);
@@ -172,7 +173,7 @@ const Job = ({route}) => {
       {showShadow && <ShadowLine />}
     </View>
   );
-};
+});
 
 const styles = StyleSheet.create({
   container: {

@@ -19,7 +19,6 @@ import Animated, {
 import {groupSavings} from '../repo/data';
 import Text from '../shared/Text';
 import ScaleAnimation from '../shared/ScaleAnimation';
-import {theme} from '../theme';
 
 const gradientColors = [
   'rgba(0,0,0,0.0)',
@@ -28,7 +27,7 @@ const gradientColors = [
   'rgba(0,0,0,0.78)',
 ];
 
-const Home = () => {
+const Home = React.memo(() => {
   const [showOverlay, setShowOverlay] = useState(false);
   const opacity = useSharedValue(0);
 
@@ -58,7 +57,6 @@ const Home = () => {
     <View
       style={{
         flex: 1,
-        backgroundColor: theme.bg,
       }}>
       <ScaleAnimation>
         <Header />
@@ -123,9 +121,9 @@ const Home = () => {
       )}
     </View>
   );
-};
+});
 
-const Arrow = ({title, icon}) => {
+const Arrow = React.memo(({title, icon}) => {
   return (
     <View
       style={{
@@ -150,6 +148,6 @@ const Arrow = ({title, icon}) => {
       </Text>
     </View>
   );
-};
+});
 
 export default Home;

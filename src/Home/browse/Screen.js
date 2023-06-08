@@ -63,7 +63,7 @@ const TAB_ICON_SIZE = 22;
 
 const ARROW_ICON_SIZE = 24;
 
-const Tabs = ['home', 'more', 'suitcase', 'piechart', 'user'];
+const Tabs = ['home', 'more', 'suitcase', 'piechart'];
 
 const Art = {
   Facebook: (

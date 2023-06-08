@@ -9,7 +9,7 @@ import {
   CIRCLE_WIDTH,
 } from '../utils';
 
-const Toggle = ({onPress, active = false}) => {
+const Toggle = React.memo(({onPress, active = false}) => {
   const {animateStyle} = useToggleAnimation({active});
 
   return (
@@ -19,7 +19,7 @@ const Toggle = ({onPress, active = false}) => {
       </View>
     </TouchableWithoutFeedback>
   );
-};
+});
 
 const styles = StyleSheet.create({
   container: {

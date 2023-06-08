@@ -1,3 +1,4 @@
+import * as themeMain from '../Home/theme';
 export const theme = {
   input: '#F9FAFA',
   cardBackground: '#FDEDD2',
@@ -9,7 +10,7 @@ export const theme = {
   text_placeholder: '#9E9FA0',
   icon_main: '#F9FAFA',
   button_overlay: '#f6e770',
-  bg: '#474B6F',
+  bg: themeMain.theme.bg,
 };
 
 export const shadowLineGradientColors = ['rgba(0, 0, 0, 0.1)', '#ffffff00'];

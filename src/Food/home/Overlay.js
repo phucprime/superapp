@@ -1,7 +1,7 @@
 import React from 'react';
 import {View} from 'react-native';
 
-const Overlay = ({params}) => {
+const Overlay = React.memo(({params}) => {
   // const opacity = useSharedValue(1);
 
   // const bottomOverlayStyle = useAnimatedStyle(() => ({
@@ -48,6 +48,6 @@ const Overlay = ({params}) => {
             </LinearGradient> */}
     </View>
   );
-};
+});
 
 export default Overlay;

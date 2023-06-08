@@ -37,7 +37,7 @@ const TopTabs = () => {
   );
 };
 
-const Tab = ({index, title, selectedIndex, setSelectedIndex}) => {
+const Tab = React.memo(({index, title, selectedIndex, setSelectedIndex}) => {
   const [layoutW, setLayoutW] = useState(0);
 
   const isSelected = selectedIndex === index;
@@ -92,6 +92,6 @@ const Tab = ({index, title, selectedIndex, setSelectedIndex}) => {
       </View>
     </TouchableWithoutFeedback>
   );
-};
+});
 
 export default TopTabs;

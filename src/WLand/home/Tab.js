@@ -6,7 +6,7 @@ import Animated from 'react-native-reanimated';
 import useTabAnimation from '../hooks/useTabAnimation';
 import {theme} from '../theme';
 
-const Tab = ({name, selected, onPress}) => {
+const Tab = React.memo(({name, selected, onPress}) => {
   const springConfig = {
     damping: 15,
     mass: 0.5,
@@ -52,6 +52,6 @@ const Tab = ({name, selected, onPress}) => {
       </Animated.View>
     </TouchableWithoutFeedback>
   );
-};
+});
 
 export default Tab;

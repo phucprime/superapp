@@ -1,7 +1,8 @@
 export const theme = {
   light: '#fff',
   border: 'rgba(245, 245, 245, .3)',
-  bg: '#474B6F',
+  // bg: '#474B6F',
+  bg: 'rgba(78, 164, 238, .7)',
   text1: '#DDDEEB',
   box: 'rgba(179, 184, 232, .15)',
   star: '#a0efd8',
@@ -44,7 +45,7 @@ export const selectedTabColors = [
   'rgba(104, 183, 228, .5)',
   'rgba(104, 183, 228, 1)',
 ];
-export const searchButtonColors = ['#918EE7', '#585D82', '#585D82'];
+export const searchButtonColors = ['#919EE1', '#585D82'];
 
 export const smallBoxColor = 'rgba(179, 184, 232, .15)';
 export const largeBoxColor = '';

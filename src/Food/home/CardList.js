@@ -31,39 +31,41 @@ function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-const CardList = ({groupSavings, onAnimationStart, onAnimationEnd}) => {
-  const shuffleBack = useSharedValue(false);
+const CardList = React.memo(
+  ({groupSavings, onAnimationStart, onAnimationEnd}) => {
+    const shuffleBack = useSharedValue(false);
 
-  const [data, setData] = useState();
+    const [data, setData] = useState();
 
-  useEffect(() => {
-    setTimeout(() => {
-      setData(groupSavings);
-    }, 850);
-  }, []);
+    useEffect(() => {
+      setTimeout(() => {
+        setData(groupSavings);
+      }, 850);
+    }, []);
 
-  return (
-    <View
-      style={{
-        height: CARD_HEIGHT,
-        width: width,
-      }}>
-      <View>
-        {data &&
-          data.map((item, index) => (
-            <Card
-              key={item.id}
-              {...{item}}
-              {...{index}}
-              {...{onAnimationStart}}
-              {...{onAnimationEnd}}
-              {...{shuffleBack}}
-            />
-          ))}
+    return (
+      <View
+        style={{
+          height: CARD_HEIGHT,
+          width: width,
+        }}>
+        <View>
+          {data &&
+            data.map((item, index) => (
+              <Card
+                key={item.id}
+                {...{item}}
+                {...{index}}
+                {...{onAnimationStart}}
+                {...{onAnimationEnd}}
+                {...{shuffleBack}}
+              />
+            ))}
+        </View>
       </View>
-    </View>
-  );
-};
+    );
+  },
+);
 
 const Card = React.memo(
   ({item, index, onAnimationStart, onAnimationEnd, shuffleBack}) => {
@@ -283,14 +285,6 @@ const styles = StyleSheet.create({
     borderColor: theme.border,
     padding: 3,
     borderRadius: BORDER_RADIUS + 4,
-    // shadowColor: "#000",
-    // shadowOffset: {
-    //     width: 0,
-    //     height: 3,
-    // },
-    // shadowOpacity: 0.15,
-    // shadowRadius: 5.65,
-    // elevation: 5,
   },
   detailSectionDefaultStyle: {
     flex: 1,

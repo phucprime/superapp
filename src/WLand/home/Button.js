@@ -12,7 +12,7 @@ const springConfig = {
   restSpeedThreshold: 0.5,
 };
 
-const Button = ({children, onPress, customContainerStyle}) => {
+const Button = React.memo(({children, onPress, customContainerStyle}) => {
   const {scale, scaleAnimation} = useScaleAnimation({
     initialValue: 1,
     springConfig,
@@ -36,6 +36,6 @@ const Button = ({children, onPress, customContainerStyle}) => {
       </Animated.View>
     </TouchableWithoutFeedback>
   );
-};
+});
 
 export default Button;

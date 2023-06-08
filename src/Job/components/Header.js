@@ -24,7 +24,7 @@ const HeaderIcon = {
   job: <BackIcon height={25} width={25} fill={theme.icon_main} />,
 };
 
-const Header = props => {
+const Header = React.memo(props => {
   const {route, navigation, back, progress} = props;
 
   const isHomePage = route.name === 'home';
@@ -79,7 +79,7 @@ const Header = props => {
       )}
     </Animated.View>
   );
-};
+});
 
 const styles = StyleSheet.create({
   container: {

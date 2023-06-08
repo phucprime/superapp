@@ -5,7 +5,7 @@ import {BORDER_WIDTH, HEADER_HEIGHT, LAYOUT_HORIZONTAL_PADDING} from '../utils';
 import {theme} from '../theme';
 import Space from '../shared/Space';
 
-const Header = ({params}) => (
+const Header = React.memo(({params}) => (
   <View
     style={{
       height: HEADER_HEIGHT,
@@ -119,6 +119,6 @@ const Header = ({params}) => (
       </View>
     </View>
   </View>
-);
+));
 
 export default Header;

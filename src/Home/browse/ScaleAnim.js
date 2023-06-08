@@ -18,28 +18,30 @@ const springConfig = {
   restSpeedThreshold: 0.5,
 };
 
-const ScaleAnim = ({children, customContainerStyle, delay = DELAY}) => {
-  const scale = useSharedValue(0);
+const ScaleAnim = React.memo(
+  ({children, customContainerStyle, delay = DELAY}) => {
+    const scale = useSharedValue(0);
 
-  useEffect(() => {
-    scale.value = 1;
-  }, []);
+    useEffect(() => {
+      scale.value = 1;
+    }, []);
 
-  const scaleAnim = useAnimatedStyle(() => {
-    return {
-      transform: [
-        {
-          scale: withDelay(delay, withSpring(scale.value, springConfig)),
-        },
-      ],
-    };
-  });
+    const scaleAnim = useAnimatedStyle(() => {
+      return {
+        transform: [
+          {
+            scale: withDelay(delay, withSpring(scale.value, springConfig)),
+          },
+        ],
+      };
+    });
 
-  return (
-    <Animated.View style={[customContainerStyle, scaleAnim]}>
-      {children}
-    </Animated.View>
-  );
-};
+    return (
+      <Animated.View style={[customContainerStyle, scaleAnim]}>
+        {children}
+      </Animated.View>
+    );
+  },
+);
 
 export default ScaleAnim;

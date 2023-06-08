@@ -16,7 +16,7 @@ const timingConfig = {
   easing: Easing.bezier(0.22, 1, 0.36, 1),
 };
 
-const Slide = ({children, delay = DELAY}) => {
+const Slide = React.memo(({children, delay = DELAY}) => {
   const offset = useSharedValue(SCR_HEIGHT - 330);
 
   useEffect(() => {
@@ -34,6 +34,6 @@ const Slide = ({children, delay = DELAY}) => {
   });
 
   return <Animated.View style={animateY}>{children}</Animated.View>;
-};
+});
 
 export default Slide;

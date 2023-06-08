@@ -6,7 +6,7 @@ import {cardBackgroundColor} from '../helpers';
 import ClockIcon from '../../../assets/job/clock.svg';
 import {elevation_1, elevation_5} from '../utils';
 
-const JobStatus = ({order}) => {
+const JobStatus = React.memo(({order}) => {
   return (
     <View style={styles.statusContainer}>
       <View style={styles.clock}>
@@ -18,9 +18,9 @@ const JobStatus = ({order}) => {
       </Text>
     </View>
   );
-};
+});
 
-const JobCardFooter = ({applied, hoursAgo, totalApplied}) => {
+const JobCardFooter = React.memo(({applied, hoursAgo, totalApplied}) => {
   const LIMIT = 3;
 
   const people = applied.slice(0, LIMIT);
@@ -54,9 +54,9 @@ const JobCardFooter = ({applied, hoursAgo, totalApplied}) => {
       <Text style={styles.hoursAgo}>{hoursAgo}</Text>
     </View>
   );
-};
+});
 
-const JobCard = ({item, onJobCardPress}) => {
+const JobCard = React.memo(({item, onJobCardPress}) => {
   const {
     title,
     category,
@@ -93,7 +93,7 @@ const JobCard = ({item, onJobCardPress}) => {
       </View>
     </TouchableWithoutFeedback>
   );
-};
+});
 
 const styles = StyleSheet.create({
   container: {

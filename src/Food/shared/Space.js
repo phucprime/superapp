@@ -1,7 +1,7 @@
 import React from 'react';
 import {View} from 'react-native';
 
-const Space = ({size, horizontal = false}) => {
+const Space = React.memo(({size, horizontal = false}) => {
   const horizontalStyle = {
     width: size,
   };
@@ -9,6 +9,6 @@ const Space = ({size, horizontal = false}) => {
     height: size,
   };
   return <View style={horizontal ? horizontalStyle : verticalStyle} />;
-};
+});
 
 export default Space;

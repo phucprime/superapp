@@ -16,7 +16,7 @@ const timingConfig = {
   easing: Easing.inOut(Easing.cubic),
 };
 
-const Slide = ({children, index}) => {
+const Slide = React.memo(({children, index}) => {
   const offset = useSharedValue(SCR_WIDTH);
 
   useEffect(() => {
@@ -38,6 +38,6 @@ const Slide = ({children, index}) => {
   });
 
   return <Animated.View style={animateX}>{children}</Animated.View>;
-};
+});
 
 export default Slide;

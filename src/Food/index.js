@@ -1,9 +1,8 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useEffect, useState} from 'react';
-import {View, ActivityIndicator, StatusBar} from 'react-native';
+import {View, ActivityIndicator} from 'react-native';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import Home from './home';
-import {theme} from './theme';
 import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
 
 const FoodScreen = () => {
@@ -18,10 +17,7 @@ const FoodScreen = () => {
   return (
     <GestureHandlerRootView style={{flex: 1}}>
       <SafeAreaProvider>
-        <SafeAreaView
-          style={{flex: 1, backgroundColor: theme.bg}}
-          edges={['top', 'right', 'left']}>
-          <StatusBar barStyle="dark-content" />
+        <SafeAreaView style={{flex: 1}} edges={['top', 'right', 'left']}>
           {isLoading && (
             <View
               style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>

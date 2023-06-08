@@ -5,7 +5,7 @@ import {animationDelay, LAYOUT_HORIZONTAL_PADDING} from '../utils';
 import ScaleAnimation from './ScaleAnimation';
 import Tab from './Tab';
 
-const TopTabs = ({selectedTabIndex, setSelectedTabIndex}) => {
+const TopTabs = React.memo(({selectedTabIndex, setSelectedTabIndex}) => {
   return (
     <ScaleAnimation delay={animationDelay['tabs-container']}>
       <ScrollView
@@ -27,6 +27,6 @@ const TopTabs = ({selectedTabIndex, setSelectedTabIndex}) => {
       </ScrollView>
     </ScaleAnimation>
   );
-};
+});
 
 export default TopTabs;

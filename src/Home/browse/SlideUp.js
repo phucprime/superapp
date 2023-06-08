@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect} from 'react';
 import Animated, {
   useSharedValue,
@@ -8,7 +9,7 @@ import Animated, {
 } from 'react-native-reanimated';
 import {FOOTER_HEIGHT} from '../utils';
 
-const DELAY = 400;
+const DELAY = 300;
 
 const timingConfig = {
   duration: 700,
@@ -20,7 +21,6 @@ const SlideUp = ({children}) => {
 
   useEffect(() => {
     offset.value = 0;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const animateY = useAnimatedStyle(() => {

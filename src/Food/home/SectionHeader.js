@@ -4,7 +4,7 @@ import {View} from 'react-native';
 import Text from '../shared/Text';
 import {BORDER_WIDTH} from '../utils';
 
-const SectionHeader = ({title, withViewButton = false}) => (
+const SectionHeader = React.memo(({title, withViewButton = false}) => (
   <View
     style={{
       flexDirection: 'row',
@@ -14,6 +14,6 @@ const SectionHeader = ({title, withViewButton = false}) => (
     <Text style={{}}>{title}</Text>
     {withViewButton && <Text style={{}}>View all</Text>}
   </View>
-);
+));
 
 export default SectionHeader;

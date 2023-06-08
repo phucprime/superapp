@@ -18,7 +18,7 @@ const timingConfigTranslate = {
   easing: Easing.inOut(Easing.cubic),
 };
 
-const FadeIn = ({children, delay = 0}) => {
+const FadeIn = React.memo(({children, delay = 0}) => {
   const DELAY_TRANSLATE = delay;
   const DELAY_OPACITY = DELAY_TRANSLATE + 100;
 
@@ -48,6 +48,6 @@ const FadeIn = ({children, delay = 0}) => {
   });
 
   return <Animated.View style={animationStyle}>{children}</Animated.View>;
-};
+});
 
 export default FadeIn;

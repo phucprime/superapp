@@ -6,7 +6,7 @@ import {categories} from '../data';
 import PostList from './PostList';
 import {SCR_WIDTH} from '../utils';
 
-const PostListWrapper = ({selectedTabIndex}) => {
+const PostListWrapper = React.memo(({selectedTabIndex}) => {
   const scrollViewRef = useRef();
 
   useEffect(() => {
@@ -38,6 +38,6 @@ const PostListWrapper = ({selectedTabIndex}) => {
       {postLists}
     </ScrollView>
   );
-};
+});
 
 export default PostListWrapper;

@@ -41,9 +41,9 @@ export const gradientLastColors = [
   'rgba(75, 77, 117, .1)',
 ];
 export const selectedTabColors = [
-  'rgba(159, 233, 252, 1)',
-  'rgba(104, 183, 228, .5)',
-  'rgba(104, 183, 228, 1)',
+  'rgba(159, 233, 222, 1)',
+  'rgba(104, 234, 222, .1)',
+  'rgba(104, 234, 222, 1)',
 ];
 export const searchButtonColors = ['#919EE1', '#585D82'];
 

@@ -175,11 +175,7 @@ const PostList = () => {
                           {post.isLiked ? (
                             <Heart width={15} height={15} fill={theme.red} />
                           ) : (
-                            <Heart
-                              width={15}
-                              height={15}
-                              fill={theme.inactive}
-                            />
+                            <Heart width={15} height={15} fill={theme.red} />
                           )}
                           <Spacer horizontal size={3} />
                           <Text
@@ -197,7 +193,11 @@ const PostList = () => {
                           alignItems: 'center',
                           padding: 5,
                         }}>
-                        <Comment width={17} height={17} fill={theme.inactive} />
+                        <Comment
+                          width={17}
+                          height={17}
+                          fill={theme.textSecondary}
+                        />
                         <Spacer horizontal size={3} />
                         <Text
                           style={{
@@ -223,7 +223,7 @@ const PostList = () => {
                       width={20}
                       height={20}
                       strokeWidth={2}
-                      stroke={theme.inactive}
+                      stroke={theme.textSecondary}
                     />
                   </Button>
                 </View>

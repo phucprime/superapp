@@ -44,6 +44,7 @@ import ArrowRightIcon from '../../../assets/arrow-right.svg';
 import {FOOTER_HEIGHT, HEADER_HEIGHT} from '../utils';
 import SlideUp from './SlideUp';
 import JobScreen from '../../Job';
+import FoodScreen from '../../Food';
 
 /**
  * For the sake of saving
@@ -509,6 +510,7 @@ const Screen = () => {
         </ScrollView>
       )}
       {selected === 2 && <JobScreen />}
+      {selected === 3 && <FoodScreen />}
       <Footer selected={selected} setSelected={setSelected} />
     </View>
   );

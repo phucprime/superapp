@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect} from 'react';
 import Animated, {
   useSharedValue,
@@ -23,7 +24,6 @@ const FadeIn = ({children}) => {
   useEffect(() => {
     opacity.value = 1;
     animateY.value = 0;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const animationStyle = useAnimatedStyle(() => {

@@ -45,6 +45,7 @@ import {FOOTER_HEIGHT, HEADER_HEIGHT} from '../utils';
 import SlideUp from './SlideUp';
 import JobScreen from '../../Job';
 import FoodScreen from '../../Food';
+import WonderLandScreen from '../../WLand';
 
 /**
  * For the sake of saving
@@ -509,6 +510,7 @@ const Screen = () => {
           <BestSection />
         </ScrollView>
       )}
+      {selected === 1 && <WonderLandScreen />}
       {selected === 2 && <JobScreen />}
       {selected === 3 && <FoodScreen />}
       <Footer selected={selected} setSelected={setSelected} />

@@ -15,7 +15,7 @@
     "@react-native-masked-view/masked-view": "^0.2.9",
     "@react-navigation/native": "6.0.6",
     "@react-navigation/native-stack": "6.2.4",
-    "@react-navigation/stack": "6.0.11",
+    "@react-navigation/stack": "6.3.21",
     "add": "^2.0.6",
     "react": "18.2.0",
     "react-native": "0.71.8",
